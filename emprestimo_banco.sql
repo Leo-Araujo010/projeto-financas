@@ -181,3 +181,13 @@ from financial_loan
 group by purpose
 order by purpose;
 
+-- Relatório compra ou aluguel de imoveis --
+
+select 
+	home_ownership as transacao_imoveis,
+	count(id) as numero_aplicacoes_emprestimos,
+	sum(total_payment) as total_recebido,
+	sum(loan_amount) as total_financiado
+from financial_loan
+group by transacao_imoveis
+order by transacao_imoveis;
